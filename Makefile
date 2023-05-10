@@ -1,4 +1,9 @@
 # ssdsim linux support
+DOCKER_IMAGE_NAME = ssdsim
+DOCKER_TAG = $(shell git describe --tags --always)
+docker-build:
+	docker build -t $(DOCKER_IMAGE_NAME):$(DOCKER_TAG) .
+
 all:ssd 
 	
 clean:
